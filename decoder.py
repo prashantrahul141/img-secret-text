@@ -10,16 +10,14 @@ class Decoder:
     def check_png(self) -> bool:
         if self.img.endswith('.png'):
             return True
-        else:
-            return False
+        return False
 
     def check_header(self) -> bool:
         ''' check if the first pixel has 0 in its R value '''
         rgb_values = list(self.original_img.getdata())
         if rgb_values[0][0] == 0:
             return True
-        else:
-            return False
+        return False
 
 
 
