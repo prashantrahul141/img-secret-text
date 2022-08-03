@@ -20,11 +20,18 @@ class Decoder:
             return True
         return False
     
-    def get_r_value(self) -> list:
+    def get_r_value(self,gap:int) -> list:
+        '''get the first value of the required pixel after every gap in the image and return the list of it'''
         R_values = []
+        R_values_with_gap = []
+        a = 1
         for pixels in list(self.original_img.getdata()):
             R_values.append(pixels[0])
-        return R_values
+        while a <= len(list(self.original_img.getdata())):
+            R_values_with_gap.append(R_values[a])
+            a = a + gap
+
+        return R_values_with_gap
         
 
 
