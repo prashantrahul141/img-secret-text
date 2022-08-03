@@ -6,6 +6,7 @@ class Decoder:
         self.img = img
         self.original_img = Image.open(self.img)
         
+        
 
     def check_png(self) -> bool:
         if self.img.endswith('.png'):
@@ -18,6 +19,12 @@ class Decoder:
         if rgb_values[0][0] == 0:
             return True
         return False
-
+    
+    def get_r_value(self) -> list:
+        R_values = []
+        for pixels in list(self.original_img.getdata()):
+            R_values.append(pixels[0])
+        return R_values
+        
 
 
