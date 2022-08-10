@@ -10,7 +10,6 @@ class Incoder:
         self.convert_img()
         self.gaps = self.max_gap() if gaps == 0 else gaps
         self.image_array_data = self.IMG.getdata()
-        print(self.gaps)
     
     def convert_img(self):
         '''converts jpg img into png to avoid jpg compression'''
