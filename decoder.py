@@ -60,3 +60,12 @@ class Decoder:
             else:
                 _string += "~"
         return _string
+
+
+
+import json
+with open("secret_text_list.json", 'r') as f:
+    data = json.load(f)["list"]
+        
+decode = Decoder("output.png", data)
+print(decode.decode())

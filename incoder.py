@@ -77,3 +77,13 @@ class Incoder:
             return (_r, _g, _b, 255)
            
         raise ValueError(f"character '{_text}' not in secret list.")
+
+
+import json
+with open("secret_text_list.json", 'r') as f:
+    data = json.load(f)["list"]
+
+incoder = Incoder("test.png", "hellow", data)
+incoder.incode()
+for i in list(incoder.IMG.getdata()):
+    print(i)
