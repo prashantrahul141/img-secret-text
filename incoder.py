@@ -83,7 +83,7 @@ import json
 with open("secret_text_list.json", 'r') as f:
     data = json.load(f)["list"]
 
-incoder = Incoder("test.png", "hellow", data)
+incode_text = "hellow"
+incoder = Incoder("test.png",incode_text, data)
 incoder.incode()
-for i in list(incoder.IMG.getdata()):
-    print(i)
+print(f"Incoded '{incode_text}' with header {incoder.image_array_data[0]}.")

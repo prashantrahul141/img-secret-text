@@ -68,4 +68,5 @@ with open("secret_text_list.json", 'r') as f:
     data = json.load(f)["list"]
         
 decode = Decoder("output.png", data)
-print(decode.decode())
+decode.decode()
+print(f"decoded '{decode.decode()}'.")
